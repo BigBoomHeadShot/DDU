@@ -289,7 +289,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -433,7 +433,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 7
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -738,7 +738,7 @@ RectTransform:
   m_Children:
   - {fileID: 494864056}
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 9
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1287,7 +1287,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1251211183
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1300,7 +1300,6 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 5080125164691428139}
   - {fileID: 288251524}
   - {fileID: 1959836365}
   - {fileID: 1461080485}
@@ -1425,7 +1424,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 3
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1580,7 +1579,7 @@ RectTransform:
   m_Children:
   - {fileID: 1798213326}
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1997,7 +1996,7 @@ RectTransform:
   m_Children:
   - {fileID: 1998566371}
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 6
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2161,6 +2160,7 @@ RectTransform:
   - {fileID: 5080125163522430621}
   - {fileID: 5080125163470943290}
   - {fileID: 5080125164040709351}
+  - {fileID: 5080125164691428139}
   m_Father: {fileID: 3240175846939010255}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -2241,7 +2241,7 @@ RectTransform:
   m_Children:
   - {fileID: 1870472581}
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 8
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2257,7 +2257,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1940873183}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 613183e784bd46e4da2354ef0dd2989f, type: 3}
+  m_Script: {fileID: 11500000, guid: 3f7a3ead28550ff49a73ca63ecd03791, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &1940873186
@@ -2303,7 +2303,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1940873187}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1940873185}
+        m_TargetAssemblyTypeName: QuitScript, Assembly-CSharp
+        m_MethodName: QuitGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1940873187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2373,7 +2385,7 @@ Transform:
   - {fileID: 808937420}
   - {fileID: 795921423}
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1998566370
 GameObject:
@@ -2541,7 +2553,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1251211183}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -2736,7 +2748,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3240175846939010255
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3544,6 +3556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fa69b39e83c6783439317ecedf9132a7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  buttonText: {fileID: 5080125163507926914}
 --- !u!1 &5080125163470943293
 GameObject:
   m_ObjectHideFlags: 0
@@ -3593,8 +3606,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -3749,6 +3762,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7a404ace32925bf4c8e5e19035dcb140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  state: 1
+  oldState: 0
+  changed: 0
+  changeButton: 0
+  screenChoice: {fileID: 5080125163522430619}
+  changeButtonScript: {fileID: 5080125164691428136}
+  changeButtonObject: {fileID: 5080125164691428138}
 --- !u!114 &5080125163522430619
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4138,7 +4158,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4244,8 +4264,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -4868,8 +4888,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5321,6 +5341,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d292afa58a2928046831776ce8e837e0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  start: 0
+  text: {fileID: 5080125164847814531}
+  settingScript: {fileID: 5080125163522430618}
+  settingObject: {fileID: 5080125163522430619}
 --- !u!114 &5080125164691428137
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5406,16 +5430,16 @@ RectTransform:
   m_GameObject: {fileID: 5080125164691428138}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.3088024, y: 2.3088024, z: 1.1544012}
+  m_LocalScale: {x: 0.8136175, y: 0.8433981, z: 1.1544012}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 5080125164847814530}
-  m_Father: {fileID: 1251211183}
-  m_RootOrder: 0
+  m_Father: {fileID: 1923760987}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -69.42243, y: 23.572983}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5080125164720663750
@@ -5475,8 +5499,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -5959,8 +5983,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4281479730
-  m_fontColor: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+    rgba: 4278190080
+  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
