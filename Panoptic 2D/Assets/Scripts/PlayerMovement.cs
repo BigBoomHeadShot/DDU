@@ -7,9 +7,8 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D body;
     float hAxis;
     float vAxis;
-
-    float speed = 5;
-    float runSpeed = 10;
+    public float speed = 5;
+    public float runSpeed = 10;
 
     // Start is called before the first frame update
     void Start()
@@ -26,8 +25,8 @@ public class PlayerMovement : MonoBehaviour
 
     void movement()
     {
-        hAxis = Input.GetAxisRaw("Horizontal");
-        vAxis = Input.GetAxisRaw("Vertical");
+        hAxis = Input.GetAxisRaw("HorizontalController");
+        vAxis = Input.GetAxisRaw("VerticalController");
 
         if (Input.GetButton("runButton"))
         {

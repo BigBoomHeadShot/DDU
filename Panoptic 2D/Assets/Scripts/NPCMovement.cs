@@ -8,7 +8,6 @@ using System.Linq;
 
 public class NPCMovement : MonoBehaviour
 {
-
     float distance;
     float timer;
     int index;
@@ -43,21 +42,20 @@ public class NPCMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        moveToWaypoint();
-        distance = Vector2.Distance(transform.position, waypointGoal.transform.position);
-        if (distance < 1f)
+        while (true)
         {
-            delayFunction();
+            moveToWaypoint();
+            distance = Vector2.Distance(transform.position, waypointGoal.transform.position);
+            if (distance < 1f)
+            {
+                delayFunction();
+            }
         }
-
     }
 
     void delayFunction()
     {
-        float delay = (Random.Range(3, 7));
-        
-
+        float delay = (Random.Range(5, 9));
         timer += Time.deltaTime;
         if (timer > delay)
         {
