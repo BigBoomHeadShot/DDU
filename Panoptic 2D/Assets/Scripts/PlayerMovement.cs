@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
         hAxis = Input.GetAxisRaw("HorizontalController");
         vAxis = Input.GetAxisRaw("VerticalController");
 
-        if (Input.GetButton("runButton"))
+        if (Input.GetButton("runButton") || Input.GetKeyDown(KeyCode.Keypad0))
         {
             body.velocity = new Vector2(hAxis * runSpeed, vAxis * runSpeed);
         }

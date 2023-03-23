@@ -10,23 +10,21 @@ public class NPCHandeller : MonoBehaviour
     int index;
     float timer;
     public float delay = 2f;
-    public int maxNPCs = 10;
+    public int maxNpcs = 20;
+    public int startNpcs = 10;
 
     public TextMeshProUGUI npcTextCounter;
 
     GameObject[] NPCs;
-
     public GameObject npcPrefab;
-
     GameObject currentSpawnPoint;
-
     GameObject[] spawnPoints;
 
     // Start is called before the first frame update
     void Start()
     {
         spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
-
+        beginningSpawns();
     }
 
     // Update is called once per frame
@@ -35,10 +33,8 @@ public class NPCHandeller : MonoBehaviour
         NPCs = GameObject.FindGameObjectsWithTag("NPC");
         numberOfNPCs = NPCs.Length;
         display();
-        spawnNPC();
-
-
-
+        delayFunction();
+        
     }
 
     void display()
@@ -46,23 +42,35 @@ public class NPCHandeller : MonoBehaviour
         npcTextCounter.text = "NPCs: " + numberOfNPCs;
     }
 
+    void delayFunction()
+    {
+        float delay = 1;
+        timer += Time.deltaTime;
+        if (timer > delay)
+        {
+            spawnNPC();
+        }
+    }
 
     void spawnNPC()
     {
-
-        
-        timer += Time.deltaTime;
-        if (numberOfNPCs < maxNPCs)
+        if (numberOfNPCs < maxNpcs)
         {
-            if (timer < delay)
-            {
-                timer = 0;
-                index = Random.Range(0, spawnPoints.Length);
-                currentSpawnPoint = spawnPoints[index];
-                Instantiate(npcPrefab, currentSpawnPoint.transform.position, currentSpawnPoint.transform.rotation);
-            }
+            timer = 0;
+            index = Random.Range(0, spawnPoints.Length);
+            currentSpawnPoint = spawnPoints[index];
+            Instantiate(npcPrefab, currentSpawnPoint.transform.position, currentSpawnPoint.transform.rotation);
+
         }
-        
+    }
+
+    void beginningSpawns()
+    {
+        for (int i = 0; i < startNpcs; i++)
+        {
+            spawnNPC();
+        }
+        //return;
     }
 
 }
