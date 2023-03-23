@@ -7,6 +7,8 @@ public class TimerScript : MonoBehaviour
 {
     public float timeRemaining;
     int minutes;
+    int seconds;
+    string subSec;
     [SerializeField] TMP_Text timerText;
     void Update()
     {
@@ -14,7 +16,16 @@ public class TimerScript : MonoBehaviour
         {
             timeRemaining -= Time.deltaTime;
             minutes = ((int)(timeRemaining / 60));
-            timerText.text = "Time to Live: " + minutes + ":" + ((int)(timeRemaining - (minutes * 60)));
+            seconds = (int)(timeRemaining - (minutes * 60));
+            if (seconds < 10)
+            {
+                subSec = "0";
+            }
+            else
+            {
+                subSec = "";
+            }
+            timerText.text = "Time to Live: " + minutes + ":" + subSec + seconds;
         }
         else
         {
