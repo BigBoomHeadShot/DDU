@@ -54,7 +54,7 @@ public class NPCMovement : MonoBehaviour
 
     void delayFunction()
     {
-        float delay = (Random.Range(5, 9));
+        float delay = (Random.Range(2, 9));
         timer += Time.deltaTime;
         if (timer > delay)
         {

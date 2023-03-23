@@ -9,17 +9,16 @@ public class NPCHandeller : MonoBehaviour
     int numberOfNPCs;
     int index;
     float timer;
-    public float delay = 1f;
+    public float delay = 2f;
+    public int maxNPCs = 10;
 
     public TextMeshProUGUI npcTextCounter;
 
     GameObject[] NPCs;
 
-    GameObject npcPrefab;
+    public GameObject npcPrefab;
 
     GameObject currentSpawnPoint;
-
-    List<GameObject> newSpawnPoints = new List<GameObject>();
 
     GameObject[] spawnPoints;
 
@@ -27,12 +26,7 @@ public class NPCHandeller : MonoBehaviour
     void Start()
     {
         spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
-        for (int i = 0; i < spawnPoints.Length; i++)
-        {
-            newSpawnPoints.Add(spawnPoints[i]);
-        }
 
-        //npcTextCounter = gameObject.GetComponent<TextMeshPro>();
     }
 
     // Update is called once per frame
@@ -41,7 +35,10 @@ public class NPCHandeller : MonoBehaviour
         NPCs = GameObject.FindGameObjectsWithTag("NPC");
         numberOfNPCs = NPCs.Length;
         display();
-        spawnNpc();
+        spawnNPC();
+
+
+
     }
 
     void display()
@@ -49,14 +46,23 @@ public class NPCHandeller : MonoBehaviour
         npcTextCounter.text = "NPCs: " + numberOfNPCs;
     }
 
-    void spawnNpc()
+
+    void spawnNPC()
     {
+
+        
         timer += Time.deltaTime;
-        if (numberOfNPCs <= 10 && timer > delay)
+        if (numberOfNPCs < maxNPCs)
         {
-            index = Random.Range(0, spawnPoints.Length);
-            currentSpawnPoint = spawnPoints[index];
-            Instantiate(npcPrefab, currentSpawnPoint.transform.position, currentSpawnPoint.transform.rotation);
+            if (timer < delay)
+            {
+                timer = 0;
+                index = Random.Range(0, spawnPoints.Length);
+                currentSpawnPoint = spawnPoints[index];
+                Instantiate(npcPrefab, currentSpawnPoint.transform.position, currentSpawnPoint.transform.rotation);
+            }
         }
+        
     }
+
 }
