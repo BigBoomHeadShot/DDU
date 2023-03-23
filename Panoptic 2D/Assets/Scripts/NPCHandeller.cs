@@ -7,9 +7,15 @@ using TMPro;
 public class NPCHandeller : MonoBehaviour
 {
     int numberOfNPCs;
+    int index;
+    float timer;
+    public float delay = 1f;
+
     public TextMeshProUGUI npcTextCounter;
 
     GameObject[] NPCs;
+
+    GameObject npcPrefab;
 
     GameObject currentSpawnPoint;
 
@@ -35,10 +41,22 @@ public class NPCHandeller : MonoBehaviour
         NPCs = GameObject.FindGameObjectsWithTag("NPC");
         numberOfNPCs = NPCs.Length;
         display();
+        spawnNpc();
     }
 
     void display()
     {
         npcTextCounter.text = "NPCs: " + numberOfNPCs;
+    }
+
+    void spawnNpc()
+    {
+        timer += Time.deltaTime;
+        if (numberOfNPCs <= 10 && timer > delay)
+        {
+            index = Random.Range(0, spawnPoints.Length);
+            currentSpawnPoint = spawnPoints[index];
+            Instantiate(npcPrefab, currentSpawnPoint.transform.position, currentSpawnPoint.transform.rotation);
+        }
     }
 }

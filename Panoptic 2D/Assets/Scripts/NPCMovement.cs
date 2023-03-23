@@ -42,15 +42,14 @@ public class NPCMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        while (true)
-        {
-            moveToWaypoint();
-            distance = Vector2.Distance(transform.position, waypointGoal.transform.position);
-            if (distance < 1f)
-            {
-                delayFunction();
-            }
-        }
+
+       moveToWaypoint();
+       distance = Vector2.Distance(transform.position, waypointGoal.transform.position);
+       if (distance < 1f)
+       {
+            delayFunction();
+       }
+        
     }
 
     void delayFunction()
