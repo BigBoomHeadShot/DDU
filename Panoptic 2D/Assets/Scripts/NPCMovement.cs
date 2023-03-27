@@ -11,15 +11,17 @@ public class NPCMovement : MonoBehaviour
     float distance;
     float timer;
     int index;
-    GameObject currentPoint;
+    
     NavMeshAgent agent;
 
-    GameObject waypointGoal;
+    //GameObject waypointGoal;
 
-    List<GameObject> newWaypoint = new List<GameObject>();
+    Vector2 waypointGoal;
 
+    public Transform spriteHolder;
     GameObject[] waypoints;
 
+    
 
     // Start is called before the first frame update
     void Start()
@@ -29,12 +31,12 @@ public class NPCMovement : MonoBehaviour
         agent.updateRotation = false;
         agent.updateUpAxis = false;
 
+        
+
         waypoints = GameObject.FindGameObjectsWithTag("waypoint");
-        for (int i = 0; i < waypoints.Length; i++)
-        {
-            newWaypoint.Add(waypoints[i]);
-        }
-        choosePoint();
+        waypointGoal = new Vector2(Random.Range(-10, 10), Random.Range(-5, 5));
+        
+        StartCoroutine(FindPoint());
     }
 
     
@@ -42,19 +44,22 @@ public class NPCMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moveToWaypoint();
+        //distance = Vector2.Distance(transform.position, waypointGoal);
+        //if (distance < 1f)
+        //{
+        //delayFunction();
+        //}
 
-       moveToWaypoint();
-       distance = Vector2.Distance(transform.position, waypointGoal.transform.position);
-       if (distance < 1f)
-       {
-            delayFunction();
-       }
         
+
+        spriteHolder.rotation = Quaternion.LookRotation(agent.velocity.normalized);
+
     }
 
     void delayFunction()
     {
-        float delay = (Random.Range(2, 9));
+        float delay = (Random.Range(4, 10));
         timer += Time.deltaTime;
         if (timer > delay)
         {
@@ -62,15 +67,32 @@ public class NPCMovement : MonoBehaviour
         }
     }
 
+    IEnumerator FindPoint()
+    {
+
+        
+        while (true)
+        {
+            yield return new WaitForSeconds(Random.Range(2, 6));
+            waypointGoal = new Vector2(Random.Range(-10, 10), Random.Range(-5, 5));
+            //Debug.Log(gameObject.name + " " + waypointGoal);
+
+        }
+
+
+    }
 
     void moveToWaypoint()
     {
-        agent.destination = waypointGoal.transform.position;
+        agent.destination = waypointGoal;
     }
 
     void choosePoint()
     {
-        index = Random.Range(0, waypoints.Length);
-        waypointGoal = waypoints[index];
+        //index = Random.Range(0, waypoints.Length);
+        //waypointGoal = waypoints[index];
+
+
+
     }
 }

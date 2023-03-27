@@ -6,8 +6,8 @@ TagManager:
   tags:
   - waypoint
   - NPC
-  - Spawnpoint
   - spawnPoint
+  - PreShot
   layers:
   - Default
   - TransparentFX
