@@ -8,6 +8,7 @@ TagManager:
   - NPC
   - spawnPoint
   - PreShot
+  - Laser
   layers:
   - Default
   - TransparentFX
