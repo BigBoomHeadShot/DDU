@@ -7,10 +7,13 @@ using TMPro;
 public class NPCHandeller : MonoBehaviour
 {
     int numberOfNPCs;
+    int lastNumNPC;
     int index;
     float timer;
     public float delay = 2f;
-    public int maxNpcs = 20;
+    public int maxNpcs = 60;
+    public int currentMaxNpcs = 20;
+
     public int startNpcs = 10;
 
     public TextMeshProUGUI npcTextCounter;
@@ -23,6 +26,7 @@ public class NPCHandeller : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        
         spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
         beginningSpawns();
     }
@@ -34,7 +38,16 @@ public class NPCHandeller : MonoBehaviour
         numberOfNPCs = NPCs.Length;
         display();
         delayFunction();
+        if (numberOfNPCs < lastNumNPC && currentMaxNpcs < maxNpcs)
+        {
+            currentMaxNpcs += 1;
+        }
         
+    }
+
+    private void LateUpdate()
+    {
+        lastNumNPC = numberOfNPCs;
     }
 
     void display()
@@ -54,12 +67,13 @@ public class NPCHandeller : MonoBehaviour
 
     void spawnNPC()
     {
-        if (numberOfNPCs < maxNpcs)
+        if (numberOfNPCs < currentMaxNpcs)
         {
             timer = 0;
             index = Random.Range(0, spawnPoints.Length);
             currentSpawnPoint = spawnPoints[index];
             Instantiate(npcPrefab, currentSpawnPoint.transform.position, currentSpawnPoint.transform.rotation);
+
 
         }
     }
@@ -70,7 +84,7 @@ public class NPCHandeller : MonoBehaviour
         {
             spawnNPC();
         }
-        //return;
+        
     }
 
 }

@@ -45,7 +45,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 1
-  maxNpcs: 20
+  maxNpcs: 60
+  currentMaxNpcs: 20
   startNpcs: 10
   npcTextCounter: {fileID: 0}
   npcPrefab: {fileID: 5482048918194498386, guid: 35e9ede952176904d95b74579510c09e, type: 3}

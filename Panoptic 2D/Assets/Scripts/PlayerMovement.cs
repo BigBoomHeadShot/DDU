@@ -13,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5;
     public float runSpeed = 10;
 
+    public Transform spriteHolder;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,7 +25,16 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (body.velocity.x != 0 || body.velocity.y != 0)
+        {
+            spriteHolder.up = body.velocity.normalized;
+        }
         movement();
+
+        if (Input.GetButton("SpinButton"))
+        {
+            transform.Rotate(0, 0, 1500 * Time.deltaTime);
+        }
     }
 
     void movement()
@@ -41,11 +52,12 @@ public class PlayerMovement : MonoBehaviour
         else
         {
             body.velocity = new Vector2(hAxis * speed, vAxis * speed);
-            body.velocity = new Vector2(aHaxis * speed, aVaxis * speed);
+            
         }
 
 
-        
+        //body.velocity = new Vector2(aHaxis * speed, aVaxis * speed);
+
     }
 
 }
