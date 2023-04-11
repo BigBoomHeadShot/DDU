@@ -6,9 +6,8 @@ public class PlayerMovement : MonoBehaviour
 {
     Rigidbody2D body;
     float hAxis;
-    float aHaxis;
     float vAxis;
-    float aVaxis;
+
 
     public float speed = 5;
     public float runSpeed = 10;
@@ -39,9 +38,6 @@ public class PlayerMovement : MonoBehaviour
 
     void movement()
     {
-        aHaxis = Input.GetAxisRaw("ArrowHorizontal");
-        aVaxis = Input.GetAxisRaw("ArrowVertical");
-
         hAxis = Input.GetAxisRaw("HorizontalController");
         vAxis = Input.GetAxisRaw("VerticalController");
 
