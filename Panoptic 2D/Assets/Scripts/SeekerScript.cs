@@ -68,7 +68,7 @@ public class SeekerScript : MonoBehaviour
                     laser.localScale = new Vector3(hit.distance, 1, 1);   
                 }
                         
-                //StartCoroutine("Shoot");
+                StartCoroutine("Shoot");
             }
         }
         
