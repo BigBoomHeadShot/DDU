@@ -39,9 +39,13 @@ public class NPCMovement : MonoBehaviour
         direction = transform.position - laser.transform.position;
         direction.Normalize();
 
-        if (runningAway != true)
+        if (runningAway == false)
         {
             moveToWaypoint();
+        }
+        else if (runningAway == true)
+        {
+            runAway();
         }
 
 
@@ -65,7 +69,8 @@ public class NPCMovement : MonoBehaviour
 
     IEnumerator runTimer()
     {
-
+        yield return new WaitForSeconds(5);
+        runningAway = false;
     }
 
     IEnumerator FindPoint()
