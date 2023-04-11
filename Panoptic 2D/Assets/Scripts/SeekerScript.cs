@@ -7,9 +7,12 @@ public class SeekerScript : MonoBehaviour
 
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject shot;
+    [SerializeField] GameObject SeekerW;
+    [SerializeField] GameObject RestartMenu;
     [SerializeField] Transform laser;
     [SerializeField] float railSpeed;
     [SerializeField] float rotationSpeed;
+    int health = 5;
     bool shootAble = true;
     bool moveable = true;
     private Vector3 mouse_pos;
@@ -21,6 +24,14 @@ public class SeekerScript : MonoBehaviour
 
     void Update()
     {
+
+        if (health < 1)
+        {
+            moveable = false;
+            shootAble = false;
+            SeekerW.SetActive(true);
+            RestartMenu.SetActive(true);
+        }
         if (moveable == true)
         {
             mouse_pos = Input.mousePosition;
@@ -74,7 +85,15 @@ public class SeekerScript : MonoBehaviour
         
 
     }
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.transform.tag == "Bullet")
+        {
+            Destroy(collision.gameObject);
+            health--;
 
+        }
+    }
 
     private IEnumerator Shoot()
     {

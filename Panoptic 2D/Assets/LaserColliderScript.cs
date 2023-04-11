@@ -5,6 +5,8 @@ using UnityEngine;
 public class LaserColliderScript : MonoBehaviour
 {
     [SerializeField] GameObject explosion;
+    [SerializeField] GameObject SeekerW;
+    [SerializeField] GameObject RestartMenu;   
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +25,11 @@ public class LaserColliderScript : MonoBehaviour
         {
             Instantiate(explosion, collision.transform.position, Quaternion.identity);
             Destroy(collision.transform.gameObject);
+            if (collision.gameObject.tag == "Player")
+            {
+                SeekerW.SetActive(true);
+                RestartMenu.SetActive(true);
+            }
         }
         
     }
