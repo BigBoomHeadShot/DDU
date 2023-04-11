@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5759095102965986227}
   - component: {fileID: 5759095102965986226}
   - component: {fileID: 5759095102965986189}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -137,9 +137,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5759095103482844444}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: BendyWall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -173,9 +173,9 @@ GameObject:
   - component: {fileID: 5759095103714247913}
   - component: {fileID: 5759095103714247912}
   - component: {fileID: 5759095103714247915}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

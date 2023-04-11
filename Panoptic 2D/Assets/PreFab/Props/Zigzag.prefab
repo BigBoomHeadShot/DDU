@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5532725265107334183}
   - component: {fileID: 8394036870100063743}
   - component: {fileID: 6674164380620836508}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -140,9 +140,9 @@ GameObject:
   - component: {fileID: 5576225174518464501}
   - component: {fileID: 4719702813648287309}
   - component: {fileID: 3209636257544471960}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -266,9 +266,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1493937118382619631}
   - component: {fileID: 5345059736282447705}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Zigzag
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -315,9 +315,9 @@ GameObject:
   - component: {fileID: 4323734667422291466}
   - component: {fileID: 1579254933503653771}
   - component: {fileID: 1338019562460709613}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

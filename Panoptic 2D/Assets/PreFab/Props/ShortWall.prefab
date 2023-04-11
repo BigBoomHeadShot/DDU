@@ -10,9 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 1819392087544510461}
   - component: {fileID: 3353407379248104882}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: ShortWall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -57,9 +57,9 @@ GameObject:
   - component: {fileID: 1819392088186303636}
   - component: {fileID: 1819392088186303637}
   - component: {fileID: 1819392088186304362}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Wall
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

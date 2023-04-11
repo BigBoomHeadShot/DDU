@@ -7,6 +7,7 @@ public class SeekerScript : MonoBehaviour
 
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject shot;
+    [SerializeField] Transform laser;
     [SerializeField] float railSpeed;
     [SerializeField] float rotationSpeed;
     bool shootAble = true;
@@ -60,7 +61,14 @@ public class SeekerScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
-                StartCoroutine("Shoot");
+                LayerMask mask = LayerMask.GetMask("Wall");
+                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, Mathf.Infinity, mask);
+                if (hit.collider != null)
+                {
+                    laser.localScale = new Vector3(hit.distance, 1, 1);   
+                }
+                        
+                //StartCoroutine("Shoot");
             }
         }
         
