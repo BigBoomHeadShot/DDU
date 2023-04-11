@@ -8,6 +8,7 @@ public class BulletScript : MonoBehaviour
     void Start()
     {
         
+        gameObject.GetComponent<Rigidbody2D>().AddForce(new Vector3(0, 2000, 0));
     }
 
     // Update is called once per frame

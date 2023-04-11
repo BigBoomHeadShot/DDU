@@ -9,6 +9,7 @@ TagManager:
   - Spawnpoint
   - spawnPoint
   - wall
+  - Bullet
   layers:
   - Default
   - TransparentFX
