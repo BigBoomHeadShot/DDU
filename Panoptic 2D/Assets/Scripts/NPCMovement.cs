@@ -8,16 +8,12 @@ using System.Linq;
 
 public class NPCMovement : MonoBehaviour
 {
-    float distance;
-    float timer;
-
-
     NavMeshAgent agent;
 
     //GameObject waypointGoal;
-
+    bool runningAway;
     Vector2 waypointGoal;
-
+    Vector2 direction;
     public GameObject spriteHolder;
 
     GameObject laser;
@@ -37,12 +33,19 @@ public class NPCMovement : MonoBehaviour
         StartCoroutine(FindPoint());
     }
 
-
     // Update is called once per frame
     void Update()
     {
+        direction = transform.position - laser.transform.position;
+        direction.Normalize();
 
-        moveToWaypoint();
+        if (runningAway != true)
+        {
+            moveToWaypoint();
+        }
+
+
+
         
         
         
@@ -52,6 +55,16 @@ public class NPCMovement : MonoBehaviour
         {
             spriteHolder.transform.up = agent.velocity.normalized;
         }
+
+    }
+
+    void runAway()
+    {
+        agent.destination = direction;
+    }
+
+    IEnumerator runTimer()
+    {
 
     }
 
@@ -73,6 +86,15 @@ public class NPCMovement : MonoBehaviour
     void moveToWaypoint()
     {
         agent.destination = waypointGoal;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.CompareTag("Laser"))
+        {
+            runningAway = true;
+            StartCoroutine(runTimer());
+        }
     }
 
 }
