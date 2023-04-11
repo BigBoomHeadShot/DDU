@@ -72,12 +72,7 @@ public class SeekerScript : MonoBehaviour
         {
             if (Input.GetKeyDown(KeyCode.Space) || Input.GetKeyDown(KeyCode.Mouse0))
             {
-                LayerMask mask = LayerMask.GetMask("Wall");
-                RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, Mathf.Infinity, mask);
-                if (hit.collider != null)
-                {
-                    laser.localScale = new Vector3(hit.distance, 1, 1);   
-                }
+                
                         
                 StartCoroutine("Shoot");
             }
@@ -102,6 +97,12 @@ public class SeekerScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         muzzle.SetActive(false);
         moveable = false;
+        LayerMask mask = LayerMask.GetMask("Wall");
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, transform.right, Mathf.Infinity, mask);
+        if (hit.collider != null)
+        {
+            laser.localScale = new Vector3(hit.distance, 1, 1);
+        }
         shot.SetActive(true);
         yield return new WaitForSeconds(1);
         shot.SetActive(false);

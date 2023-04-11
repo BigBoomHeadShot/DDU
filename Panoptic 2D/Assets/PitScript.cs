@@ -33,6 +33,7 @@ public class PitScript : MonoBehaviour
         {
             falling = true;
             Destroy(collision.gameObject.GetComponent<PlayerMovement>());
+            Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
         }
     }
 }
