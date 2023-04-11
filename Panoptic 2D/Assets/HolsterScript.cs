@@ -22,5 +22,14 @@ public class HolsterScript : MonoBehaviour
         {
             gun.SetActive(false);
         }
+
+        if (Input.GetAxis("AimButton") == 1)
+        {
+            gun.SetActive(true);
+        }
+        else
+        {
+            gun.SetActive(false);
+        }
     }
 }

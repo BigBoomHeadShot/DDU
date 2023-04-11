@@ -8,6 +8,9 @@ public class GunScript : MonoBehaviour
     [SerializeField] GameObject prefab;
     [SerializeField] Transform player;
 
+    float delay = 0.5f;
+    float timer;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -23,6 +26,13 @@ public class GunScript : MonoBehaviour
             ammo--;
             Instantiate(prefab, transform.position, player.rotation);
 
+        }
+        timer += Time.deltaTime;
+        if (Input.GetAxis("ShootingButton") == 1 && ammo > 0 && timer > delay)
+        {
+            ammo--;
+            Instantiate(prefab, transform.position, player.rotation);
+            timer = 0;
         }
     }
 }
