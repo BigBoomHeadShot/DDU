@@ -10,6 +10,7 @@ TagManager:
   - spawnPoint
   - wall
   - Bullet
+  - Pit
   layers:
   - Default
   - TransparentFX
