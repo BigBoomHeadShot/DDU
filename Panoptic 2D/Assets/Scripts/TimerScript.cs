@@ -5,6 +5,8 @@ using TMPro;
 
 public class TimerScript : MonoBehaviour
 {
+    [SerializeField] GameObject SeekerW;
+    [SerializeField] GameObject RestartMenu;
     public float timeRemaining;
     int minutes;
     int seconds;
@@ -29,7 +31,8 @@ public class TimerScript : MonoBehaviour
         }
         else
         {
-
+            SeekerW.SetActive(true);
+            RestartMenu.SetActive(true);
         }
     }
 
