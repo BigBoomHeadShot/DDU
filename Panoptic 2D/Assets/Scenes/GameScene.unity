@@ -2038,7 +2038,7 @@ GameObject:
   - component: {fileID: 1030619273}
   m_Layer: 0
   m_Name: Shot
-  m_TagString: Untagged
+  m_TagString: Laser
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4654,6 +4654,22 @@ PrefabInstance:
       propertyPath: m_Name
       value: Time Object (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 45cdded70789e7647b5af637e0f83094, type: 3}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6682526275754098270, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -4828,6 +4844,22 @@ PrefabInstance:
     - target: {fileID: 6682526275754098267, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
       propertyPath: m_Name
       value: Time Object
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 45cdded70789e7647b5af637e0f83094, type: 3}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6682526275754098269, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
+      propertyPath: m_Color.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6682526275754098270, guid: 3ba0861be3debe04685099c1214c9fe1, type: 3}
       propertyPath: m_RootOrder
