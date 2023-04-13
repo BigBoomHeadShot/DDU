@@ -35,8 +35,8 @@ public class PlayerMovement : MonoBehaviour
             transform.Rotate(0, 0, 1500 * Time.deltaTime);
         }
 
-        Debug.Log("Aim " + Input.GetAxis("AimButton"));
-        Debug.Log("Shooting " + Input.GetAxis("ShootingButton"));
+        //Debug.Log("Aim " + Input.GetAxis("AimButton"));
+        //Debug.Log("Shooting " + Input.GetAxis("ShootingButton"));
     }
 
     void movement()

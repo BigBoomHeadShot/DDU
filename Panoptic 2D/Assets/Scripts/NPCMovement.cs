@@ -6,6 +6,7 @@ using System.Linq;
 
 
 
+
 public class NPCMovement : MonoBehaviour
 {
     NavMeshAgent agent;
@@ -15,6 +16,7 @@ public class NPCMovement : MonoBehaviour
     Vector2 waypointGoal;
     Vector2 direction;
     public GameObject spriteHolder;
+
     
 
 
