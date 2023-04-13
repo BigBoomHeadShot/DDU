@@ -6,19 +6,23 @@ using UnityEngine.AI;
 
 
 
+
 public class NavMeshGenerator : MonoBehaviour
 {
-    public  
+    public NavMeshSurface Surface2D;
+    
+
     // Start is called before the first frame update
     void Start()
     {
-        StartCoroutine("GenerateNavmesh");
+        Surface2D = GetComponent<NavMeshSurface>();
+        StartCoroutine(GenerateNavmesh());
     }
 
     private IEnumerator GenerateNavmesh()
     {
         yield return new WaitForSeconds(1);
-        GenerateNavmesh();
+        Surface2D.UpdateNavMesh(Surface2D.navMeshData);
     }
     // Update is called once per frame
     void Update()
