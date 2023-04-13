@@ -5,6 +5,7 @@ using UnityEngine;
 public class TimeObjectScript : MonoBehaviour
 {
     [SerializeField] TimerScript timer;
+    [SerializeField] AudioSource healSound;
     public bool enabled = false;
     bool playerDetected;
     public float timeTo = 5;
@@ -34,6 +35,7 @@ public class TimeObjectScript : MonoBehaviour
                 playerDetected = false;
                 timer.timeRemaining += 60;
                 transform.parent.GetComponent<TimeObjectTimer>().counter = 15;
+                healSound.Play();
                 enabled = false;
             }
         

@@ -7,6 +7,7 @@ public class PitScript : MonoBehaviour
     [SerializeField] GameObject hider;
     [SerializeField] GameObject SeekerW;
     [SerializeField] GameObject RestartMenu;
+    [SerializeField] AudioSource fallSound;
     bool falling;
     // Start is called before the first frame update
     void Start()
@@ -32,6 +33,7 @@ public class PitScript : MonoBehaviour
         if (collision.transform.tag == "Player")
         {
             falling = true;
+            fallSound.Play();
             Destroy(collision.gameObject.GetComponent<PlayerMovement>());
             Destroy(collision.gameObject.GetComponent<Rigidbody2D>());
         }

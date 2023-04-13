@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SeekerScript : MonoBehaviour
 {
-
+    [SerializeField] AudioSource laserSound;
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject shot;
     [SerializeField] GameObject SeekerW;
@@ -92,6 +92,8 @@ public class SeekerScript : MonoBehaviour
 
     private IEnumerator Shoot()
     {
+        laserSound.Play();
+
         shootAble = false;
         muzzle.SetActive(true);
         yield return new WaitForSeconds(1);
