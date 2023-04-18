@@ -3915,7 +3915,7 @@ MonoBehaviour:
   laserSound: {fileID: 1481720218}
   muzzle: {fileID: 524561434}
   shot: {fileID: 402410582}
-  SeekerW: {fileID: 1281751920}
+  SeekerW: {fileID: 1211109138}
   RestartMenu: {fileID: 2043874749}
   laser: {fileID: 1173590265}
   railSpeed: 2.5
@@ -4872,7 +4872,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 228950c91fb99c648ab1abdb70c76f90, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ammo: 0
+  ammo: 10
   prefab: {fileID: 1663165096521742728, guid: 30099f31f6b69bb48a0b505fc16a7f81, type: 3}
   player: {fileID: 1716462697}
 --- !u!212 &2081404445

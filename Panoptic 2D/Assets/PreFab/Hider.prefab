@@ -97,7 +97,7 @@ GameObject:
   - component: {fileID: 6917830137571898797}
   - component: {fileID: 5846073751244583456}
   m_Layer: 0
-  m_Name: Player
+  m_Name: Hider
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
