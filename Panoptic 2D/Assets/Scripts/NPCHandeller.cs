@@ -19,7 +19,10 @@ public class NPCHandeller : MonoBehaviour
     public TextMeshProUGUI npcTextCounter;
 
     GameObject[] NPCs;
+    GameObject currentNPC;
     public GameObject npcPrefab;
+    public GameObject hiderPrefab;
+    public GameObject ammoBox;
     GameObject currentSpawnPoint;
     GameObject[] spawnPoints;
 
@@ -29,6 +32,8 @@ public class NPCHandeller : MonoBehaviour
         
         spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
         beginningSpawns();
+        spawnHider();
+        StartCoroutine(ammoSpawn());
     }
 
     // Update is called once per frame
@@ -53,6 +58,12 @@ public class NPCHandeller : MonoBehaviour
     void display()
     {
         npcTextCounter.text = "NPCs: " + numberOfNPCs;
+    }
+    void spawnHider()
+    {
+        index = Random.Range(0, spawnPoints.Length);
+        currentSpawnPoint = spawnPoints[index];
+        Instantiate(hiderPrefab, currentSpawnPoint.transform.position, currentSpawnPoint.transform.rotation);
     }
 
     void delayFunction()
@@ -87,4 +98,15 @@ public class NPCHandeller : MonoBehaviour
         
     }
 
+    IEnumerator ammoSpawn()
+    {
+        while (true)
+        {
+            yield return new WaitForSeconds(60);
+            Debug.Log("Ammo Spawned!");
+            index = Random.Range(0, spawnPoints.Length);
+            currentNPC = NPCs[index];
+            Instantiate(ammoBox, currentNPC.transform.position, currentNPC.transform.rotation);
+        }
+    }
 }

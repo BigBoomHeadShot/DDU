@@ -12,6 +12,8 @@ TagManager:
   - Bullet
   - Pit
   - Laser
+  - PreShot
+  - nonCollider
   layers:
   - Default
   - TransparentFX
@@ -20,7 +22,7 @@ TagManager:
   - Water
   - UI
   - HiderLayer
-  - 
+  - nonCollider
   - 
   - 
   - 

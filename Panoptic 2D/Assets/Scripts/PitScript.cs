@@ -8,11 +8,12 @@ public class PitScript : MonoBehaviour
     [SerializeField] GameObject SeekerW;
     [SerializeField] GameObject RestartMenu;
     [SerializeField] AudioSource fallSound;
+
     bool falling;
     // Start is called before the first frame update
     void Start()
     {
-        
+        hider = GameObject.FindWithTag("Player");
     }
 
     // Update is called once per frame

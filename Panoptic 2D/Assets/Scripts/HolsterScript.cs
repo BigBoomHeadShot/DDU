@@ -5,6 +5,7 @@ using UnityEngine;
 public class HolsterScript : MonoBehaviour
 {
     [SerializeField] GameObject gun;
+    public float ammo;
     // Start is called before the first frame update
     void Start()
     {

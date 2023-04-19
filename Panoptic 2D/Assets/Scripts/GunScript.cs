@@ -6,6 +6,7 @@ public class GunScript : MonoBehaviour
 {
     public float ammo;
     [SerializeField] GameObject prefab;
+    [SerializeField] GameObject holster;
     [SerializeField] Transform player;
 
     float delay = 0.5f;
@@ -21,6 +22,8 @@ public class GunScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        ammo = holster.GetComponent<HolsterScript>().ammo;
+
         if (Input.GetKeyDown(KeyCode.Space) && ammo > 0)
         {
             ammo--;
