@@ -6477,7 +6477,7 @@ MonoBehaviour:
   SeekerW: {fileID: 1798448260}
   RestartMenu: {fileID: 1506957333}
   laser: {fileID: 858010755}
-  railSpeed: 2.5
+  railSpeed: 1
   rotationSpeed: 10
   target: {fileID: 919392661}
 --- !u!4 &919392661

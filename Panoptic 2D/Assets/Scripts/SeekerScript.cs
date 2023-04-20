@@ -20,7 +20,7 @@ public class SeekerScript : MonoBehaviour
     public Transform target;
     private Vector3 object_pos;
     private float angle;
-    
+    float frac;
     
 
     void Update()
@@ -49,20 +49,25 @@ public class SeekerScript : MonoBehaviour
 
             if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.D))
             {
-                if (Input.GetKey(KeyCode.A) && Input.GetKey(KeyCode.D))
-                {
-                    
-                }
-                else if (Input.GetKey(KeyCode.A))
-                {
-                    transform.position = Vector3.Lerp(transform.position , new Vector3(-3,0,0), Time.deltaTime * railSpeed);
-                }
-                else
-                {
-                    transform.position = Vector3.Lerp(transform.position, new Vector3(3, 0, 0), Time.deltaTime * railSpeed);
-                }
                 
-
+                if (Input.GetKey(KeyCode.A))
+                {
+                    frac += Time.deltaTime * railSpeed;
+                }
+                if (Input.GetKey(KeyCode.D))
+                {
+                    frac -= Time.deltaTime * railSpeed;
+                }
+                if (frac < 0)
+                {
+                    frac = 0;
+                }
+                if (frac > 1)
+                {
+                    frac = 1;
+                }
+                transform.position = Vector3.Lerp(new Vector3(3, 0, 0), new Vector3(-3, 0, 0), frac);
+                
 
 
             }
