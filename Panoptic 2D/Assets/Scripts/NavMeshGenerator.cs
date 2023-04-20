@@ -21,8 +21,8 @@ public class NavMeshGenerator : MonoBehaviour
 
     private IEnumerator GenerateNavmesh()
     {
-        yield return new WaitForSeconds(1);
-        
+        yield return new WaitForSeconds(0.2f);
+        AstarPath.active.Scan();
     }
     // Update is called once per frame
     void Update()

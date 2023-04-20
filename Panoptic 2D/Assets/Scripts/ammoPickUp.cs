@@ -4,16 +4,16 @@ using UnityEngine;
 
 public class ammoPickUp : MonoBehaviour
 {
-    [SerializeField]
-    GunScript gun;
 
-    
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Player"))
         {
-            gun.ammo++;
+
+            collision.GetComponentInChildren<HolsterScript>().ammo++;
             Destroy(gameObject);
         }
+
     }
+
 }

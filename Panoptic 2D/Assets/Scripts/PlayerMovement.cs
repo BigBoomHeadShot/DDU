@@ -13,12 +13,14 @@ public class PlayerMovement : MonoBehaviour
     public float runSpeed = 10;
 
     public Transform spriteHolder;
+    public GameObject Pit;
 
     // Start is called before the first frame update
     void Start()
     {
         body = GetComponent<Rigidbody2D>();
-        
+        Pit = GameObject.FindWithTag("nonCollider");
+        Physics2D.IgnoreCollision(Pit.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true) ;
     }
 
     // Update is called once per frame
