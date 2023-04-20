@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class SeekerScript : MonoBehaviour
 {
+    [SerializeField] GameObject explode;
     [SerializeField] AudioSource laserSound;
     [SerializeField] GameObject muzzle;
     [SerializeField] GameObject shot;
@@ -27,10 +28,12 @@ public class SeekerScript : MonoBehaviour
 
         if (health < 1)
         {
+            Instantiate(explode, transform);
             moveable = false;
             shootAble = false;
             SeekerW.SetActive(true);
             RestartMenu.SetActive(true);
+            Destroy(gameObject);
         }
         if (moveable == true)
         {
