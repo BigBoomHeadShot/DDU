@@ -4,10 +4,12 @@ using UnityEngine;
 
 public class GunScript : MonoBehaviour
 {
-    public float ammo;
+    
     [SerializeField] GameObject prefab;
     [SerializeField] GameObject holster;
     [SerializeField] Transform player;
+
+    HolsterScript holsterScript;
 
     float delay = 0.5f;
     float timer;
@@ -15,25 +17,25 @@ public class GunScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        holsterScript = holster.GetComponent<HolsterScript>();
     }
     
 
     // Update is called once per frame
     void Update()
     {
-        ammo = holster.GetComponent<HolsterScript>().ammo;
 
-        if (Input.GetKeyDown(KeyCode.Space) && ammo > 0)
+
+        if (Input.GetKeyDown(KeyCode.Space) && holsterScript.ammo > 0)
         {
-            ammo--;
+            holsterScript.ammo--;
             Instantiate(prefab, transform.position, player.rotation);
 
         }
         timer += Time.deltaTime;
-        if (Input.GetAxis("ShootingButton") == 1 && ammo > 0 && timer > delay)
+        if (Input.GetAxis("ShootingButton") == 1 && holsterScript.ammo > 0 && timer > delay)
         {
-            ammo--;
+            holsterScript.ammo--;
             Instantiate(prefab, transform.position, player.rotation);
             timer = 0;
         }
