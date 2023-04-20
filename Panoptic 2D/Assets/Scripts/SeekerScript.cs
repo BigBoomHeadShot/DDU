@@ -28,7 +28,7 @@ public class SeekerScript : MonoBehaviour
 
         if (health < 1)
         {
-            Instantiate(explode, transform);
+            Instantiate(explode, transform.position, transform.rotation);
             moveable = false;
             shootAble = false;
             SeekerW.SetActive(true);

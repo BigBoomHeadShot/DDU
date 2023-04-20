@@ -14,6 +14,6 @@ public class ReplayButton : MonoBehaviour
     // Update is called once per frame
     public void Restart()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1) ;
     }
 }
