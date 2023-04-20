@@ -102,7 +102,7 @@ public class NPCHandeller : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(60);
+            yield return new WaitForSeconds(30);
             Debug.Log("Ammo Spawned!");
             index = Random.Range(0, spawnPoints.Length);
             currentNPC = NPCs[index];

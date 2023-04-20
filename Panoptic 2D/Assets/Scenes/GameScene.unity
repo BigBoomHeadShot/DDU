@@ -7765,7 +7765,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25a2571cb6985554a98f164849759b50, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  hider: {fileID: 0}
   SeekerW: {fileID: 2062323055}
   RestartMenu: {fileID: 1506957333}
   fallSound: {fileID: 1039118284}
@@ -12919,6 +12918,10 @@ PrefabInstance:
       propertyPath: ammoBox
       value: 
       objectReference: {fileID: 4656857147575212839, guid: ceaad35a0cbf4a649b6f4e663a49e1ca, type: 3}
+    - target: {fileID: 6714144672028867504, guid: 48738fefa3f7b0f4fbe55a1eb5e33f8b, type: 3}
+      propertyPath: maxNpcs
+      value: 100
+      objectReference: {fileID: 0}
     - target: {fileID: 6714144672028867504, guid: 48738fefa3f7b0f4fbe55a1eb5e33f8b, type: 3}
       propertyPath: npcPrefab
       value: 

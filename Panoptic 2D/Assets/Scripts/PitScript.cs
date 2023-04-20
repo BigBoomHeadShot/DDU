@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class PitScript : MonoBehaviour
 {
-    [SerializeField] GameObject hider;
+     GameObject hider;
     [SerializeField] GameObject SeekerW;
     [SerializeField] GameObject RestartMenu;
     [SerializeField] AudioSource fallSound;
@@ -13,17 +13,20 @@ public class PitScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        hider = GameObject.FindWithTag("Player");
+        
     }
 
     // Update is called once per frame
     void Update()
     {
+       
+            
+
         if (falling == true && hider.transform.localScale.x > 0.001f)
         {
             hider.transform.localScale = new Vector3(hider.transform.localScale.x - 0.3f * Time.deltaTime, hider.transform.localScale.y - 0.3f * Time.deltaTime, hider.transform.localScale.z);
         }
-        if (hider.transform.localScale.x < 0.001f)
+        if (falling == true && hider.transform.localScale.x < 0.001f)
         {
             SeekerW.SetActive(true);
             RestartMenu.SetActive(true);
@@ -33,6 +36,7 @@ public class PitScript : MonoBehaviour
     {
         if (collision.transform.tag == "Player")
         {
+            hider = collision.gameObject;
             falling = true;
             fallSound.Play();
             Destroy(collision.gameObject.GetComponent<PlayerMovement>());
