@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -12,6 +13,8 @@ public class PlayerMovement : MonoBehaviour
     public float speed = 5;
     public float runSpeed = 10;
 
+    [SerializeField] TextMeshProUGUI BulletText;
+    [SerializeField] HolsterScript holster;
     public Transform spriteHolder;
     public GameObject Pit;
 
@@ -20,7 +23,10 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         Pit = GameObject.FindWithTag("nonCollider");
+        BulletText = GameObject.Find("Bullets").GetComponent<TextMeshProUGUI>();
         Physics2D.IgnoreCollision(Pit.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true) ;
+        holster = GetComponentInChildren<HolsterScript>();
+        StartCoroutine(DelayedText());
     }
 
     // Update is called once per frame
@@ -39,6 +45,11 @@ public class PlayerMovement : MonoBehaviour
 
         //Debug.Log("Aim " + Input.GetAxis("AimButton"));
         //Debug.Log("Shooting " + Input.GetAxis("ShootingButton"));
+    }
+    IEnumerator DelayedText()
+    {
+        yield return new WaitForSeconds(1);
+        BulletText.text = "Bullets: " + holster.ammo;
     }
 
     void movement()

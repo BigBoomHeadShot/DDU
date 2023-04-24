@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
+using UnityEngine.UI;
 
 public class SeekerScript : MonoBehaviour
 {
@@ -13,7 +15,8 @@ public class SeekerScript : MonoBehaviour
     [SerializeField] Transform laser;
     [SerializeField] float railSpeed;
     [SerializeField] float rotationSpeed;
-    int health = 5;
+    [SerializeField] Image HealthBar;
+    float health = 5;
     bool shootAble = true;
     bool moveable = true;
     private Vector3 mouse_pos;
@@ -25,6 +28,7 @@ public class SeekerScript : MonoBehaviour
 
     void Update()
     {
+        HealthBar.fillAmount = health / 5;
 
         if (health < 1)
         {
