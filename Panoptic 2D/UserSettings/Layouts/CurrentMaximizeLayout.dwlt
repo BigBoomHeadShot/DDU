@@ -226,9 +226,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 7c350100
-      m_LastClickedID: 79228
-      m_ExpandedIDs: 5a85fdffd085fdff668ffdffb08ffdffec91fdff2294fdff5896fdff8e98fdff40b5fdffc4bcfdffeabffdffcec8fdff66f5fdff1e11feff521cfeff782cfefffa5dffffe05effff12f2ffff287a0000487a0000607a0000767a000008b7000026b7000062b70000442b0100742b01005435010062350100
+      m_SelectedIDs: 948f0000
+      m_LastClickedID: 0
+      m_ExpandedIDs: ae99faffb69afaffb8b0fafffcd6faff1c59fdfffe63fdff366cfdff5a85fdffd085fdff668ffdffb08ffdffec91fdff2294fdff5896fdff8e98fdff40b5fdffc4bcfdffeabffdffcec8fdff66f5fdff1e11feff521cfeff782cfefffa5dffffe05effff12f2ffff287a0000487a0000607a0000767a000008b7000026b7000062b70000442b0100742b010054350100623501005e53010054680100
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -560,9 +560,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 0.8735926, y: -2.2765152, z: -0.053993296}
+    m_Target: {x: 215.47998, y: 477.95227, z: -3.5083747}
     speed: 2
-    m_Value: {x: 0.8735926, y: -2.2765152, z: -0.053993296}
+    m_Value: {x: 215.47998, y: 477.95227, z: -3.5083747}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -613,9 +613,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 9.202252
+    m_Target: 1273.0352
     speed: 2
-    m_Value: 9.202252
+    m_Value: 1273.0352
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -709,21 +709,21 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Sprites
+    - Assets/Scenes
     m_Globs: []
     m_OriginalText: 
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Sprites
+  - Assets/Scenes
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Leonard\Fork\DDU\Panoptic 2D
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 96.600006}
-    m_SelectedIDs: 367e0000
-    m_LastClickedID: 32310
+    scrollPos: {x: 0, y: 79}
+    m_SelectedIDs: 307e0000
+    m_LastClickedID: 32304
     m_ExpandedIDs: 00000000f27d0000f47d0000f67d0000f87d0000fa7d0000fc7d0000fe7d0000007e0000027e0000047e0000067e0000087e00000a7e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -777,8 +777,8 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
-    m_SelectedInstanceIDs: 7c350100
-    m_LastClickedInstanceID: 79228
+    m_SelectedInstanceIDs: 948f0000
+    m_LastClickedInstanceID: 36756
     m_HadKeyboardFocusLastEvent: 1
     m_ExpandedInstanceIDs: c6230000d4b6000096300000
     m_RenameOverlay:
@@ -830,7 +830,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 508
-    width: 1191
+    width: 1098.2
     height: 275.4
   m_ViewDataDictionary: {fileID: 0}
   m_OverlayCanvas:
