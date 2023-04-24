@@ -121,7 +121,7 @@ public class SeekerScript : MonoBehaviour
         yield return new WaitForSeconds(1);
         shot.SetActive(false);
         moveable = true;
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(2);
         shootAble = true;
     }
 

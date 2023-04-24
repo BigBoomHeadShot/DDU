@@ -9,6 +9,7 @@ public class NPCHandeller : MonoBehaviour
     int numberOfNPCs;
     int lastNumNPC;
     int index;
+
     float timer;
     public float delay = 2f;
     public int maxNpcs = 60;
@@ -25,20 +26,34 @@ public class NPCHandeller : MonoBehaviour
     public GameObject ammoBox;
     GameObject currentSpawnPoint;
     GameObject[] spawnPoints;
-
+    [SerializeField] TextMeshProUGUI BulletText;
+    [SerializeField] GameObject holsterObject;
+    [SerializeField] HolsterScript holster;
     // Start is called before the first frame update
     void Start()
     {
-        
+
         spawnPoints = GameObject.FindGameObjectsWithTag("spawnPoint");
         beginningSpawns();
         spawnHider();
         StartCoroutine(ammoSpawn());
+        StartCoroutine(findHolster());
+    }
+    IEnumerator findHolster()
+    {
+        yield return new WaitForSeconds(0.5f);
+        holsterObject = GameObject.FindWithTag("Player");
+        holster = holsterObject.GetComponentInChildren<HolsterScript>();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (BulletText != null && holster != null)
+        {
+            BulletText.text = "Bullets " + holster.ammo;
+        }
+
         NPCs = GameObject.FindGameObjectsWithTag("NPC");
         numberOfNPCs = NPCs.Length;
         display();
@@ -103,7 +118,7 @@ public class NPCHandeller : MonoBehaviour
         while (true)
         {
 
-            yield return new WaitForSeconds(5);
+            yield return new WaitForSeconds(20);
             index = Random.Range(0, spawnPoints.Length);
             currentNPC = NPCs[index];
             Instantiate(ammoBox, currentNPC.transform.position, currentNPC.transform.rotation);

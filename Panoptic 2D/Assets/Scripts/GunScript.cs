@@ -18,6 +18,7 @@ public class GunScript : MonoBehaviour
     void Start()
     {
         holsterScript = holster.GetComponent<HolsterScript>();
+
     }
     
 
@@ -36,8 +37,9 @@ public class GunScript : MonoBehaviour
         if (Input.GetAxis("ShootingButton") == 1 && holsterScript.ammo > 0 && timer > delay)
         {
             holsterScript.ammo--;
-            Instantiate(prefab, transform.position, player.rotation);
+            Instantiate(prefab, transform.position, transform.rotation);
             timer = 0;
         }
+
     }
 }

@@ -9,12 +9,14 @@ public class PlayerMovement : MonoBehaviour
     float hAxis;
     float vAxis;
 
+    float hAim;
+    float vAim;
 
     public float speed = 5;
     public float runSpeed = 10;
 
-    [SerializeField] TextMeshProUGUI BulletText;
-    [SerializeField] HolsterScript holster;
+
+    [SerializeField] Transform gunRotate;
     public Transform spriteHolder;
     public GameObject Pit;
 
@@ -23,10 +25,10 @@ public class PlayerMovement : MonoBehaviour
     {
         body = GetComponent<Rigidbody2D>();
         Pit = GameObject.FindWithTag("nonCollider");
-        BulletText = GameObject.Find("Bullets").GetComponent<TextMeshProUGUI>();
+        
         Physics2D.IgnoreCollision(Pit.GetComponent<Collider2D>(), GetComponent<Collider2D>(), true) ;
-        holster = GetComponentInChildren<HolsterScript>();
-        StartCoroutine(DelayedText());
+
+
     }
 
     // Update is called once per frame
@@ -46,29 +48,37 @@ public class PlayerMovement : MonoBehaviour
         //Debug.Log("Aim " + Input.GetAxis("AimButton"));
         //Debug.Log("Shooting " + Input.GetAxis("ShootingButton"));
     }
-    IEnumerator DelayedText()
-    {
-        yield return new WaitForSeconds(1);
-        BulletText.text = "Bullets: " + holster.ammo;
-    }
+
 
     void movement()
     {
         hAxis = Input.GetAxisRaw("HorizontalController");
         vAxis = Input.GetAxisRaw("VerticalController");
 
-        if (Input.GetButton("runButton") || Input.GetKeyDown(KeyCode.Keypad0))
+        hAim = Input.GetAxisRaw("HorizontalAim");
+        vAim = Input.GetAxisRaw("VerticalAim");
+
+        if (Input.GetButton("runButton") && hAxis > 0.3f || Input.GetButton("runButton") && vAxis > 0.3f || Input.GetButton("runButton") && vAxis < -0.3f || Input.GetButton("runButton") && hAxis > -0.3f)
         {
             body.velocity = new Vector2(hAxis * runSpeed, vAxis * runSpeed);
         }
-        else
+        else if (hAxis > 0.3f || vAxis > 0.3f || vAxis < -0.3f || hAxis < -0.3f)
         {
             body.velocity = new Vector2(hAxis * speed, vAxis * speed);
             
         }
+        else
+        {
+            body.velocity = Vector2.zero;
+        }
+
+        if (hAim > 0.3f || vAim > 0.3f || vAim < -0.3f || hAim < -0.3f)
+        {
+            float angle = Mathf.Atan2(-vAim, -hAim) * Mathf.Rad2Deg;
+            gunRotate.rotation = Quaternion.Euler(new Vector3(0, 0, angle));
+        }
 
 
-        //body.velocity = new Vector2(aHaxis * speed, aVaxis * speed);
 
     }
 
