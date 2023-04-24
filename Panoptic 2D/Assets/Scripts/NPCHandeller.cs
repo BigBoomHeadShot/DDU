@@ -102,11 +102,16 @@ public class NPCHandeller : MonoBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(30);
-            Debug.Log("Ammo Spawned!");
+
+            yield return new WaitForSeconds(5);
             index = Random.Range(0, spawnPoints.Length);
             currentNPC = NPCs[index];
             Instantiate(ammoBox, currentNPC.transform.position, currentNPC.transform.rotation);
+            yield return new WaitForSeconds(1);
+            index = Random.Range(0, spawnPoints.Length);
+            currentNPC = NPCs[index];
+            Instantiate(ammoBox, currentNPC.transform.position, currentNPC.transform.rotation);
+
         }
     }
 }
